@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+ /* header css start */
+
+        .header{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.908);
+            align-items: center;
+        }
+        .header .logo{
+          width: 10%;
+          padding: 10px;
+        }
+        .header .logo img{
+            width: 100%;
+            height: inherit;
+        }
+        .header .menu1{
+            width: 60%;
+            text-align: center;
+        }
+        .header .menu1 a{
+            text-decoration: none;
+            color: white;
+            /* opacity: 0.6; */
+            margin: 12px;
+        }
+        .header .menu1 a:nth-child(2){
+            padding: 0 10px;
+            border-left: 1px solid white;
+            border-right: 1px solid white ;
+        }
+        .header .search{
+            /* width: 20%; */
+            color: white; 
+        }
+        .header .search .srh{
+            width: 20%;
+            display: none;
+        }
+        .header .search .srh input{
+            padding: 8px 5px;
+            text-transform: capitalize;
+            font-size: 20px;
+            border-radius: 12px;
+        }
+        .header .bar{
+            color: white;
+            display: none;
+        }
+ /* header css end */
+    
+ /* main css start */
+
+      /* .contact{
+        width: 90%;
+        margin: 10% auto;
+        padding: 20px;
+      }
+      .contact h1{
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      .contact form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .contact form input{
+        margin: 10px;
+        border: none;
+        border-bottom: 1px solid black;
+        padding: 10px;
+      }
+      .contact form input:focus{
+       border: none;
+      }
+      .contact form textarea{
+        margin: 10px;
+        padding: 10px;
+      }
+      .contact form input[type="submit"]{
+        background-color: orange;
+        color: white;
+        font-size: 15px;
+        border-radius: 15px; 
+        border-bottom: none;   
+      } */
+
+
+      .form{
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        margin: 10% auto;
+      }
+
+      .form input{
+        margin: 10px 0px;
+        padding: 5px;
+      }
+
+      .form button{
+        padding: 5px;
+        background-color: orange;
+        border: none;
+        margin-top: 20px;
+      }
+
+ /* main css end */
+
+
+
+ /* footer css start */
+        footer{
+        width: 100%;
+        height: 40vh;
+        background-color: rgba(25, 25, 25, 0.83);
+       }
+       .footer{
+        /* width: 100%;
+        height: 20vh;
+        background-color: rgba(25, 25, 25, 0.83);; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 50px;
+       }
+       .footer .link{
+        width: 50%;
+        padding: 15px;
+       }
+       .footer .link h3{
+        color: white;
+        opacity: 0.5;
+        /* text-align: center; */
+        font-size: 17px;
+        font-weight: 300;
+       }
+       .footer .link a{
+        text-decoration: none;
+        color: white;
+        padding: 20px;
+        opacity: 0.5;
+       font-size: 15px;
+        font-weight: 300;
+       }
+       footer p{
+        color: white;
+        opacity: 0.5;
+       text-align: center;
+       margin-top: 30px;
+       font-size: 12px;
+       line-height: 20px;
+       }
+       /* footer css end */
+
+       @media  screen and (max-width:780px) {
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .header .bar{
+            width: 100%;
+            color: white;
+            display: inline-block;
+        }
+        .header .logo{
+            width: 20%;
+        }
+        .header .logo img{
+            width: 100%;
+            height: inherit;
+        }
+        .header .menu1{
+            display: none;
+        }
+
+        .footer{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20%;
+            padding-top: 30px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- header start -->
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="https://thepixelcurve.com/html/techwix/techwix/assets/images/logo-2.png" alt="">
+            </div>
+            <div class="menu1">
+                <a href="Project_CompanySiteTemplate.html"> Home </a>
+                <a href="AboutUS.html"> About Us </a>
+                <a href="ContactUs.html"> Contact Us </a>
+                <div class="bar"> <i class="fa-solid fa-bars"></i></div>
+            </div>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass search-icon" id="search" onclick="search()"></i>
+                <div class="srh">
+                    <input type="search" placeholder="search something">
+                </div>
+            </div>  
+        </div>
+    
+    </header>
+    <!-- header end -->
+
+<!-- main start -->
+
+<main>
+    <!-- <div class="contact">
+        <h1>
+            Contact Us
+        </h1>
+        <form action="">
+            <input type="text" placeholder="Enter your name" id="name">
+            <span id="nm"></span>
+            <input type="text" placeholder="Enter your address" id="address">
+            <span id="add"></span>
+            <input type="text" placeholder="Enter your phone number" id="phone">
+            <span id="ph"></span>
+            <input type="email" placeholder="Enter your email id" id="email">
+            <span id="em"></span>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Enter your message" id="msg"></textarea>
+            <span id="ms"></span>
+            <input type="submit" value="Submit" onclick="submit()">
+        </form>
+    </div> -->
+    
+
+    <div class="form">
+
+        <input type="text" id="name" placeholder="Enter your name">
+        <span id="u1"></span>
+        <input type="email" id="email" placeholder="enter your email">
+        <span id="e1"></span>
+        <input type="tel" id="number" maxlength="10" placeholder="enter your number">
+        <span id="num"></span>
+        <input type="text" placeholder="Enter your address" id="address">
+        <span id="add"></span>
+        <textarea name="" cols="30" rows="10" placeholder="Enter your message" id="msg">
+        </textarea>
+        <span id="mesg"></span>
+        <button onclick="ok()">Submit</button>
+
+    </div>
+</main>
+
+<!-- main end -->
+
+<!-- footer start -->
+    <footer>
+        <div class="footer">
+            <div class="link">
+                <h3> Pages:-</h3>
+                <a href=""> Home </a>
+                <a href=""> About Us </a>
+                <a href=""> Contact Us </a>
+            </div>
+            <div class="link">
+                <h3> Activities:-</h3>
+    
+                <a href=""> Web Template </a>
+                <a href=""> Web graphics </a>
+                <a href=""> Logo </a>
+                <a href=""> Banner </a>
+                <a href=""> Flayer </a>
+                <a href=""> Broucher designing</a>
+            </div>
+        </div>
+        <p> Copyright 2010, All right reserved. <br> Design a modern web 2.0 styled web layout.</p>
+    </footer>
+    <!-- footer end -->
+    
+    <script>
+        
+
+        function ok(){
+
+            var name = document.querySelector("#name").value;
+            // var u1 = document.querySelector("#u1");
+            var email = document.querySelector("#email").value;
+            // var e1 = document.querySelector("#e1");
+            var number = document.querySelector("#number").value;
+            // var num = document.querySelector("#num");
+            var address = document.querySelector("#address").value;
+            var msg = document.querySelector("#msg").value;
+            
+            if(name == ""){
+                document.querySelector("#u1").innerHTML = "please enter your name";
+                u1.style.color = "red";
+
+            }else{
+                if(name.length > 2){      
+                }else{
+                    // alert("name must be atleast 3 leters")
+                    u1.innerHTML = "name must be atleast 3 leters"
+                    u1.style.color = "red";
+                }
+            }
+
+            if(email == ""){
+                document.querySelector("#e1").innerHTML = "please enter your email";
+                e1.style.color = "red";
+
+            }else{
+               e1.innerHTML = "";
+            }
+
+            if(number == ""){
+                document.querySelector("#num").innerHTML = "please enter your number";
+                num.style.color = "red";
+
+            }else{
+               e1.innerHTML = "";
+            }
+
+            if(address == ""){
+                document.querySelector("#add").innerHTML = "please enter your address";
+                add.style.color = "red";
+            }else{
+                add.innerHTML = ""
+            }
+
+            if(msg == ""){
+                document.querySelector("#mesg").innerHTML = "please enter your message";
+                mesg.style.color = "red";
+            }
+        }
+
+        function search(){
+        var search = document.getElementById("search");
+       var srh =  document.querySelector(".srh");
+       srh.style.display = "block";
+       search.style.display = "none";
+     }
+       
+</script>
+</body>
+</html>

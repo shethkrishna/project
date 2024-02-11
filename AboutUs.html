@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> About Us </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+         /* header css start */
+
+         .header{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.908);
+            align-items: center;
+        }
+        .header .logo{
+          width: 10%;
+          padding: 10px;
+        }
+        .header .logo img{
+            width: 100%;
+            height: inherit;
+        }
+        .header .menu1{
+            width: 60%;
+            text-align: center;
+        }
+        .header .menu1 a{
+            text-decoration: none;
+            color: white;
+            /* opacity: 0.6; */
+            margin: 12px;
+        }
+        .header .menu1 a:nth-child(2){
+            padding: 0 10px;
+            border-left: 1px solid white;
+            border-right: 1px solid white ;
+        }
+        .header .search{
+            /* width: 20%; */
+            color: white; 
+        }
+        .header .search .srh{
+            width: 20%;
+            display: none;
+        }
+        .header .search .srh input{
+            padding: 8px 5px;
+            text-transform: capitalize;
+            font-size: 20px;
+            border-radius: 12px;
+        }
+        .header .bar{
+            color: white;
+            display: none;
+        }
+ /* header css end */
+
+ /* main css start */
+    .goal{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .goal .goal-left{
+        width: 48%;
+    }
+    .goal .goal-left img{
+        width: 100%;
+        height: inherit;
+    }
+    .goal .goal-right{
+        width: 48%; 
+        padding: 20px;    
+    }
+    .goal .goal-right h3{
+        font-size: 25px;
+    }
+    .goal .goal-right h5{
+        font-size: 18px;
+        font-weight: 500;
+        margin: 30px 0;
+        line-height: 22px;
+
+    }
+    .goal .goal-right p{
+        font-size: 15px;
+        line-height: 22px;
+    }
+    .activity{
+        width: 100%;
+        background-color: black;
+        color: white;
+        padding: 20px;
+    }
+    .activity h2{
+        font-size: 30px;
+        font-weight: 300;
+        text-align: center;
+        margin: 20px;
+    }
+    .activity .activity-type{
+        width: 90%;
+        margin: 5% auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .activity .activity-type .type{
+        width: 30%;
+    }
+    .activity .activity-type .type .image{
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    .activity .activity-type .type .image img{
+        width: 100%;
+        height: inherit;
+    }
+    .activity .activity-type .type h4{
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+    .activity .activity-type .type p{
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+    }
+ /* main css end */
+    
+
+ /* footer css start */
+ footer{
+        width: 100%;
+        height: 40vh;
+        background-color: rgba(25, 25, 25, 0.83);
+       }
+       .footer{
+        /* width: 100%;
+        height: 20vh;
+        background-color: rgba(25, 25, 25, 0.83);; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 50px;
+       }
+       .footer .link{
+        width: 50%;
+        padding: 15px;
+       }
+       .footer .link h3{
+        color: white;
+        opacity: 0.5;
+        /* text-align: center; */
+        font-size: 17px;
+        font-weight: 300;
+       }
+       .footer .link a{
+        text-decoration: none;
+        color: white;
+        padding: 20px;
+        opacity: 0.5;
+       font-size: 15px;
+        font-weight: 300;
+       }
+       footer p{
+        color: white;
+        opacity: 0.5;
+       text-align: center;
+       margin-top: 30px;
+       font-size: 12px;
+       line-height: 20px;
+       }
+       /* footer css end */
+
+       /* media query */
+       @media  screen and (max-width:980px) {
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .header .bar{
+            width: 100%;
+            color: white;
+            display: block;
+        }
+        .header .logo{
+            width: 20%;
+        }
+        .header .logo img{
+            width: 100%;
+            height: inherit;
+        }
+        .header .menu1{
+            display: none;
+        }
+        .goal{
+            display: flex;
+            flex-direction: column;
+        }
+        .mission{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .goal .goal-left{
+            width: 100%;
+        }
+        .goal .goal-left img{
+            width: 100%;
+            height: inherit;
+        }
+        .goal .goal-right{
+            width: 100%;
+        }
+
+        .footer{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20%;
+            margin-top: 20%;
+            padding-top: 30px;
+        }
+       }
+    </style>
+</head>
+<body>
+    <!-- header start -->
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="https://thepixelcurve.com/html/techwix/techwix/assets/images/logo-2.png" alt="">
+            </div>
+            <div class="menu1">
+                <a href="Project_CompanySiteTemplate.html"> Home </a>
+                <a href="AboutUS.html"> About Us </a>
+                <a href="ContactUs.html"> Contact Us </a>
+                <div class="bar"> <i class="fa-solid fa-bars"></i></div>
+            </div>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass search-icon" id="search" onclick="search()"></i>
+                <div class="srh">
+                    <input type="search" placeholder="search something">
+                </div>
+            </div>  
+        </div>
+    
+    </header>
+    <!-- header end -->
+
+<!-- main start -->
+
+<div class="goal">
+    <div class="goal-left">
+        <img src="https://ecareinfoway.com/wp-content/uploads/2020/06/Vision.jpg" alt="">
+    </div>
+    <div class="goal-right">
+        <h3> Vision </h3>
+        <h5>We strive to establish new possibilities with determination, focus, collaboration, invention and effective implementation.</h5>
+        <p> We deliver sustainable and profitable IT services to add value to businesses by the latest technology where we keep consistently, improving our knowledge and bring new creative processes to give the best quality services to all of our clients.</p>
+    </div>
+</div>
+
+<div class="goal mission">
+    <div class="goal-right">
+        <h3> Mission </h3>
+        <h5>We are determined to deliver a world-class digital branding product to our customers by providing the best quality work.</h5>
+        <p> We build the best digital branding strategies for your businesses to be More Productive, More Profitable by harnessing web solutions, e-marketing solutions, high-quality products, and excellent customer service.</p>
+    </div>
+    <div class="goal-left">
+        <img src="https://ecareinfoway.com/wp-content/uploads/2020/06/Mission.jpg" alt="">
+    </div>
+</div>
+
+<div class="goal">
+    <div class="goal-left">
+        <img src="https://ecareinfoway.com/wp-content/uploads/2020/06/Progressive.jpg" alt="">
+    </div>
+    <div class="goal-right">
+        <h3> Progressive </h3>
+        <h5>We are curious by nature and take a creative, proactive approach to progress. As we don’t know where our next project will take us, we’re often challenged to establish what can be done that has never been done before and strive to create technologically advanced solutions for clients.</h5>
+        <p> We build a powerful capability in the development and in telling the transformation story within the enterprise. The impact which we make together is understandable at every level. With a team of creative and development specialists, we consistently strive to be at the forefront of new media technology.</p>
+    </div>
+</div>
+
+<div class="activity">
+    <h2> Office Activities </h2>
+    <div class="activity-type">
+        <div class="type">
+            <div class="image">
+                <img src="https://ecareinfoway.com/wp-content/uploads/2020/04/Trekking.jpg" alt="">
+            </div>
+            <h4> Treking </h4>
+            <p>
+                A trek helps us always stay alert, communicate efficiently, develop resilience, think critically, stay calm, and never take anything for granted. It also helps us to develop a sense of respect for the surrounding environment.
+            </p>
+        </div>
+
+        <div class="type">
+            <div class="image">
+                <img src="https://ecareinfoway.com/wp-content/uploads/2020/04/Gaming.jpg" alt="">
+            </div>
+            <h4> Gaming </h4>
+            <p>
+                Games may seem like an interesting addition to the normally hectic workday, but they are ripe with benefits by allowing our team to play more games at the office. We are amazed at how a bit of friendly competition and fun-filled game time can have such positive effects on our team. It’s the simple release of energy that allows us to refocus and ultimately become more productive and efficient at our job.
+            </p>
+        </div>
+
+        <div class="type">
+            <div class="image">
+                <img src="https://ecareinfoway.com/wp-content/uploads/2020/04/Lunch.jpg" alt="">
+            </div>
+            <h4> Lunch </h4>
+            <p>
+                A team lunch is the best way to squeeze in some team bonding. We found it a great way for new hires and introverts to interact with the rest of the team. So it can build the perfect team bonding activity to promote employee engagement.
+            </p>
+        </div>
+    </div>
+</div>
+<!-- main end -->
+
+<!-- footer start -->
+<footer>
+    <div class="footer">
+        <div class="link">
+            <h3> Pages:-</h3>
+            <a href=""> Home </a>
+            <a href=""> About Us </a>
+            <a href=""> Contact Us </a>
+        </div>
+        <div class="link">
+            <h3> Activities:-</h3>
+
+            <a href=""> Web Template </a>
+            <a href=""> Web graphics </a>
+            <a href=""> Logo </a>
+            <a href=""> Banner </a>
+            <a href=""> Flayer </a>
+            <a href=""> Broucher designing</a>
+        </div>
+    </div>
+    <p> Copyright 2010, All right reserved. <br> Design a modern web 2.0 styled web layout.</p>
+</footer>
+<!-- footer end -->
+
+<script>
+     function search(){
+        var search = document.getElementById("search");
+       var srh =  document.querySelector(".srh");
+       srh.style.display = "block";
+       search.style.display = "none";
+     }
+</script>
+</body>
+</html>

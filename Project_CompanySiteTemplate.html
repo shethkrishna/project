@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Project | Comapany Site Template </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.908);
+            align-items: center;
+        }
+        .header .logo{
+          width: 10%;
+          padding: 10px;
+        }
+        .header .logo img{
+            width: 100%;
+            height: inherit;
+        }
+        .header .menu1{
+            width: 60%;
+            text-align: center;
+        }
+        .header .menu1 a{
+            text-decoration: none;
+            color: white;
+            /* opacity: 0.6; */
+            margin: 12px;
+        }
+        .header .menu1 a:nth-child(2){
+            padding: 0 10px;
+            border-left: 1px solid white;
+            border-right: 1px solid white ;
+        }
+        .header .search{
+            /* width: 20%; */
+            color: white;  
+        }
+        .header .search .srh{
+            width: 20%;
+            display: none;
+        }
+        .header .search .srh input{
+            padding: 8px 5px;
+            text-transform: capitalize;
+            font-size: 20px;
+            border-radius: 12px;
+        }
+        
+        .header .bar{
+            color: white;
+            display: none;
+        }
+    
+        .menu2{
+            width: 100%;
+            height: 20vh;
+            background-color: rgba(25, 25, 25, 0.83);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            /* margin-top: 20px; */
+        }
+        .menu2 a{
+        text-decoration: none;
+        color: black;
+        background-color: lightgrey;
+        border-radius: 5px;
+        padding: 10px 25px;
+        }
+        .menu2 a:hover{
+            background: orange;
+        }
+
+        .container{
+            width: 100%;
+            background: linear-gradient(to right, orange, rgb(228, 18, 18));
+            /* background-color: orange; */
+            /* display: none; */
+            position: relative;
+        }
+        /* .container .view{
+            display: flex;
+            justify-content: space-between;
+
+        } */
+        .container .web-layout{
+            display: flex;
+            justify-content: space-between;
+
+            /* align-items: center; */
+            color: white;
+            padding: 20px;
+            display: none;
+            /* position: absolute; */
+        }
+        .container .web-layout .services{
+            width: 48%;
+        }
+        .container .web-layout .services .box{
+            background-color: rgba(165, 42, 42, 0.318);
+            width: 70%;
+            /* text-align: center; */
+            border-radius: 5px;
+            padding: 15px;
+            text-align: left;
+            box-shadow: 5px 5px 15px black;
+        }
+        .container .web-layout .services .box h3{
+            color: green;
+            text-align: center;
+            font-size: 15px;
+        }
+        .container .web-layout .services .box p{
+            font-size: 12px;
+            line-height: 18px;
+        }
+        .container .web-layout .title{
+            width: 48%;
+           align-self: center;
+           padding: 10px;
+        }
+        .container .web-layout .title h1{
+            font-size: 20px;
+        }
+        .container .web-layout .title p{
+            font-size: 12px;
+            line-height: 18px;
+            margin-top: 10px;
+        }
+       .show{
+        display: block;
+       }
+       .container .logo{
+        width: 100%;
+        height: 40vh;   
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        display: none;
+       }
+       .container .logo div{
+        width: 10%;
+       }
+       .container .logo div img{
+        width: 100%;
+        height: inherit;
+       }
+       .container .banner{
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        justify-content: space-between;
+        display: none;
+
+       }
+       .container .banner div{
+        width: 50%;
+       }
+       .container .banner div img{
+        width: 100%;
+        height: 100%;
+       }
+       .container .flayer{
+        width: 100%;
+        /* height: 80vh; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+       }
+       .container .flayer div{
+        width: 70%;
+        /* height: 60vh; */
+        padding: 10px;
+       }
+       .container .flayer div p{
+            font-size: 15px;
+            line-height: 18px;
+       }
+       .container .flayer div img{
+        width: 100%;
+        height: inherit; 
+         display: flex;
+        align-self: center; 
+       }
+       .content{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 20px;
+       }
+       .content .welcm-note{
+        width: 60%;
+       /* text-align: center; */
+       padding: 0 25px;
+       }
+       .content .welcm-note h3{
+        position: relative;
+        margin-bottom: 10px;
+       }
+       .content .welcm-note h3::after{
+        content: "";
+        width: 100%;
+        height: 4px;
+        background-color: lightgray;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        margin-bottom: 20px;
+       }
+       .content .welcm-note p{
+        font-size: 15px;
+        line-height: 18px;
+        margin: 15px 0;
+       }
+       .content .project{
+        width: 40%;
+       }
+       .content .project .project-details{
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to right, orange, rgb(228, 18, 18));
+          padding: 20px;
+       }
+       .content .project .project-details .web-template{
+        width: 80%;
+       }
+       .content .project .project-details .web-template .temp-img{
+        width: 80%;
+        height: 400px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px; 
+       }
+       /* .temp-img {
+        width: 100%;
+        text-align: center;
+       }
+       .temp-img  img{
+        width: 50%;
+        height: inherit;
+       } */
+       .content .project .project-details .web-template .temp-img img{
+        width: 100%;
+         height: 100%;
+        /* text-align: center; */
+       }
+       .content .project .project-details .banner-design{
+        width: 80%;
+       }
+       .content .project .project-details .banner-design .banner-img{
+        width: 80%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+       }
+       .content .project .project-details .banner-design .banner-img img{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-self: center;
+       }
+       .content .project .project-details label{
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 12px;
+       }
+       footer{
+        width: 100%;
+        height: 40vh;
+        background-color: rgba(25, 25, 25, 0.83);
+       }
+       .footer{
+        /* width: 100%;
+        height: 20vh;
+        background-color: rgba(25, 25, 25, 0.83);; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 50px;
+       }
+       .footer .link{
+        width: 50%;
+        padding: 15px;
+       }
+       .footer .link h3{
+        color: white;
+        opacity: 0.5;
+        /* text-align: center; */
+        font-size: 17px;
+        font-weight: 300;
+       }
+       .footer .link a{
+        text-decoration: none;
+        color: white;
+        padding: 20px;
+        opacity: 0.5;
+       font-size: 15px;
+        font-weight: 300;
+       }
+       footer p{
+        color: white;
+        opacity: 0.5;
+       text-align: center;
+       margin-top: 30px;
+       font-size: 12px;
+       line-height: 20px;
+       }
+
+       @media screen and  (max-width:980px) {
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .header .bar{
+            /* width: 100%; */
+            color: white;
+            display: block;
+        }
+        .header .logo{
+            width: 20%;
+        }
+        .header .logo img{
+            width: 100%;
+            height: inherit;
+        }
+        .header .menu1{
+            display: none;
+        }
+        /* .container{
+            display: none;
+        } */
+        .container{
+            width: 100%;
+            margin-bottom: 20%;
+        }
+        .container .web-layout{
+            /* width: 100%; */
+            display: flex;
+            flex-direction: column;
+            display: none;
+            /* transform: scale(0); */
+        }
+        .container .web-layout .services{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .container .web-layout .title{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container .logo{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            display: none;
+            /* transform: scale(0); */
+        }
+        .container .logo div{
+            width: 25%;
+            padding: 10px;
+        }
+        .container .logo div img{
+            width: 100%;
+            height: inherit;
+        }
+        .container .banner{
+            width: 100%;
+            /* height: 60vh; */
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: space-evenly;
+            display: none;
+        }
+        .container .banner div{
+            width: 100%;
+        }
+        .container .banner div img{
+            width: 100%;
+            height: 100%;
+        }
+        .container .banner .flayer{
+            width: 100%;
+        }
+        .content{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* margin-top: 30% 0; */
+        }
+        .content .welcm-note{
+            width: 100%;
+            
+        }
+        .content .welcm-note h3{
+            font-size: 28px;
+            position: relative;
+        }
+        .content .welcm-note h3::after{
+            content: "";
+             width: 100%;
+             height: 4px;
+             background-color: lightgray;
+             position: absolute;
+             top: 40px;
+             left: 0;
+             margin-bottom: 20px;
+        }
+        .content .welcm-note p{
+             font-size: 20px;
+             line-height: 20px;
+             margin: 15px 0;
+       }  
+        .content .project{
+            width: 100%;
+            /* margin-bottom: %; */
+        }
+        .content .project h3{
+            font-size: 28px;
+            margin-left: 20px;
+            margin-bottom: 8px;
+        }
+        .content .project .project-details{
+            width: 100%;
+        }
+        .content .project .project-details label{
+            font-size: 20px;
+        }
+        .content .project .project-details .web-template{
+            width: 100%;
+        }
+        .content .project .project-details .web-template .temp-img{
+            width: 80%;
+        }
+        .content .project .project-details .web-template .temp-img img{
+            width: 100%;
+            height: 100%;
+        }
+        .content .project .project-details .banner-design{
+            width: 100%;
+        }
+        .content .project .project-details .banner-design .banner-img{
+         width: 80%;
+        }
+        .content .project .project-details .banner-design .banner-img img{
+            width: 100%;
+            height: 100%;
+        }
+        .footer{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 30%;
+            padding-top: 30px;
+        }
+       }
+    </style>
+</head>
+<body>
+    <header>
+    <div class="header">
+        <div class="logo">
+            <img src="https://thepixelcurve.com/html/techwix/techwix/assets/images/logo-2.png" alt="">
+        </div>
+        <div class="menu1">
+            <a href="Project_CompanySiteTemplate.html"> Home </a>
+            <a href="AboutUS.html"> About Us </a>
+            <a href="ContactUs.html"> Contact Us </a>
+            <div class="bar"> <i class="fa-solid fa-bars"></i></div>
+        </div>
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass search-icon" id="search" onclick="search()"></i>
+            <div class="srh">
+                <input type="search" placeholder="search something">
+            </div>
+        </div>  
+    </div>
+
+</header>
+
+        <div class="menu2">
+           
+               <a href="#" id="weblayout"> Web Layouts </a> 
+               <a href="#" id="logo"> Logo </a> 
+               <a href="#" id="banner"> Banner </a> 
+               <a href="#" id="flayer"> Flayer </a>      
+        </div>
+
+        <div class="container">
+            <div class="view web-layout">
+                <div class="services">
+                    <div class="box">
+                    <h3> More Services </h3>
+                    <p> Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your software development needs. building cloud, infrastructure, network, etc. We put a strong focus on the needs of your business to figure out solutions that best fits your demand and nail it</p>
+                </div>
+                </div>
+                <div class="title">
+                    <h1> Featured Content Title </h1>
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus quo iusto deleniti facilis. Incidunt, cum minima dolores maiores ad sint provident quis, voluptates, saepe voluptatem alias? Numquam reiciendis temporibus asperiores tempore similique quia nisi laudantium at praesentium, sapiente veniam vel inventore error nihil unde delectus?</p>
+                </div>
+            </div>
+
+            <div class="view logo">
+            <div>
+                <img src="https://demos.shopifyteam.com/netlink/wp-content/uploads/sites/484/2023/07/Group_25461.webp" alt="">
+            </div>
+            <div>
+                <img src="https://demos.shopifyteam.com/airkool/wp-content/uploads/sites/456/2023/07/Group_127971.png" alt="">
+            </div>
+            <div>
+                <img src="http://kidify.themebeer.com/wp-content/uploads/2023/10/logo.svg" alt="">
+            </div>
+            <div>
+                <img src="https://edumin.dexignlab.com/codeigniter/welcome/images/logo-text.png" alt="">
+            </div>  
+            <div>
+                <img src="https://jobick.dexignlab.com/django/welcome/images/logo-text-white.png" alt="">
+            </div>
+            <div>
+                <img src="https://mediqu.dexignzone.com/django/welcome/images/logo-text.png" alt="">
+            </div>
+            <div>
+                <img src="https://html.hixstudio.net/interno-prev/assets/img/logo/logo.png" alt="">
+            </div>  
+            </div>
+
+            <div class="view banner">
+                <div>
+                  <img src="https://thepixelcurve.com/html/techwix/techwix/assets/images/hero2-bg.jpg" alt="">
+                </div>
+                <div>
+                    <img src="https://png.pngtree.com/template/20220427/ourmid/pngtree-tiny-business-people-work-at-detachable-computer-banner-image_1288570.jpg" alt="">
+                </div>
+            </div>
+            <div class="view flayer">
+            <div>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint ea maxime mollitia, reiciendis explicabo adipisci facilis architecto, libero harum, commodi dolor dolorem dignissimos laboriosam culpa perferendis quam veritatis fugiat! Tempore voluptas iste, dolore quo ex, doloribus adipisci veritatis sunt iusto sit animi id ad in!
+                </p>
+            </div>
+            <div>
+                <img src="https://s.tmimgcdn.com/scr/800x500/320900/creative-technology-conference-webinar-flyer-template-and-business-event-banner-invitation-layout_320913-original.jpg" alt="">
+            </div>
+            </div>
+        </div>
+   
+        <main>
+            <div class="content">
+                <div class="welcm-note">
+                    <h3> Welcome to our site...</h3>
+                    <p>
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a pieceof classical Latin from 45 BC, making it over 2000 years old. Richard McClintock Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through thecites of the word in classical literature, discovered theundoubtable source.
+                    </p>
+                    <p>
+                        Lorem Ipsumcomes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.
+                    </p>
+                    <p>
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a pieceof classical Latin Iterature from 45 BC, making it over 2000 years old. Richard McClintocka Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage Lorem Ipsumcomes from sections 1.10.32 and 1.10.33 of "de Finibus
+                    </p>
+                    <p>
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a pieceof classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintocka Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage Lorem Ipsumcomes from sections 1.10.32 and 1.10.33 of "de Finibus
+                    </p>
+                </div>
+                <div class="project">
+                    <h3>Latest Projects</h3>
+                  <div class="project-details">
+                    <div class="web-template">
+                        <input type="checkbox" id="web"> 
+                        <label for="web">Modern web 2.0 styled web template. </label>
+                        <div class="temp-img">
+                        <img src="https://freshdesignweb.com/wp-content/uploads/Randerc-IT-solutions-Company-HTML-template.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="banner-design">
+                        <input type="checkbox" id="banner"> 
+                      <label for="banner">  Banner Design</label> 
+                        <div class="banner-img">
+                        <img src="https://cdn3.f-cdn.com//files/download/136496177/banner%20design%2002.jpg?fit=crop" alt="">
+                       </div> 
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+        </main>
+   
+<footer>
+    <div class="footer">
+        <div class="link">
+            <h3> Pages:-</h3>
+            <a href=""> Home </a>
+            <a href=""> About Us </a>
+            <a href=""> Contact Us </a>
+        </div>
+        <div class="link">
+            <h3> Activities:-</h3>
+
+            <a href=""> Web Template </a>
+            <a href=""> Web graphics </a>
+            <a href=""> Logo </a>
+            <a href=""> Banner </a>
+            <a href=""> Flayer </a>
+            <a href=""> Broucher designing</a>
+        </div>
+    </div>
+    <p> Copyright 2010, All right reserved. <br> Design a modern web 2.0 styled web layout.</p>
+</footer>
+<script>
+   
+     document.querySelectorAll(".menu2 a")[0].addEventListener('click',function(){
+        document.getElementsByClassName("view")[0].style.display = "flex";
+        // document.getElementsByClassName("view")[0].style.justifyContent = "space-between";
+
+        document.getElementsByClassName("view")[1].style.display = "none";
+        document.getElementsByClassName("view")[2].style.display = "none";
+        document.getElementsByClassName("view")[3].style.display = "none";
+
+     })
+     document.querySelectorAll(".menu2 a")[1].addEventListener('click',function(){
+        document.getElementsByClassName("view")[1].style.display = "flex";
+        // document.getElementsByClassName("view")[0].style.justifyContent = "space-between";
+
+        document.getElementsByClassName("view")[0].style.display = "none";
+        document.getElementsByClassName("view")[2].style.display = "none";
+        document.getElementsByClassName("view")[3].style.display = "none";
+
+
+     })
+     document.querySelectorAll(".menu2 a")[2].addEventListener('click',function(){
+        document.getElementsByClassName("view")[2].style.display = "flex";
+        // document.getElementsByClassName("view")[0].style.justifyContent = "space-between";
+
+        document.getElementsByClassName("view")[0].style.display = "none";
+        document.getElementsByClassName("view")[1].style.display = "none";
+        document.getElementsByClassName("view")[3].style.display = "none";
+     })
+     document.querySelectorAll(".menu2 a")[3].addEventListener('click',function(){
+        document.getElementsByClassName("view")[3].style.display = "flex";
+        // document.getElementsByClassName("view")[0].style.justifyContent = "space-between";
+
+        document.getElementsByClassName("view")[0].style.display = "none";
+        document.getElementsByClassName("view")[1].style.display = "none";
+        document.getElementsByClassName("view")[2].style.display = "none";
+
+     })
+
+     function search(){
+        var search = document.getElementById("search");
+       var srh =  document.querySelector(".srh");
+       srh.style.display = "block";
+       search.style.display = "none";
+     }
+
+</script>
+</body>
+</html>
