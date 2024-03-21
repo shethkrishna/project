@@ -18,6 +18,7 @@
             width: 100%;
             background-color: rgba(0, 0, 0, 0.908);
             align-items: center;
+            position: relative;
         }
         .header .logo{
           width: 10%;
@@ -46,17 +47,38 @@
             /* width: 20%; */
             color: white;  
         }
-        .header .search .srh{
+      
+        /* .header .search .srh{
             width: 20%;
             display: none;
-        }
-        .header .search .srh input{
+        } */
+        /* .header .search .srh input{
             padding: 8px 5px;
             text-transform: capitalize;
             font-size: 20px;
             border-radius: 12px;
         }
-        
+         */
+        .header .show-menu{
+            width: 40%;
+           position: absolute;
+           right: -100%;
+           top: 70%;
+           color: white;
+           display: none;
+           transition: all 5s linear;
+        }
+        .header .show-menu a{
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        .header .show-menu #xmark{
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            transition: all 5s linear;
+        }
         .header .bar{
             color: white;
             display: none;
@@ -64,19 +86,55 @@
     
         .menu2{
             width: 100%;
-            height: 20vh;
+            /* height: 20vh; */
             background-color: rgba(25, 25, 25, 0.83);
             display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
             justify-content: space-evenly;
-            align-items: center;
+            /* align-items: center; */
+            align-content: center;
             /* margin-top: 20px; */
+            padding: 20px 0px;
+            /* transform: scale(0); */
+            display: none;
+            transition: all 3s linear;
+            position: relative;
         }
-        .menu2 a{
+        .menu2 #close-menu2{
+            position: absolute;
+            top: 4%;
+            right: 2%;
+            color: white;
+        }
+        .menu2 form{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin: 10% auto; */
+        }
+        .menu2 form input{
+            width: 100%;
+            margin: 2% auto;
+            font-size: 15px;
+            padding: 2px 5px;
+        }
+        .menu2 form input::placeholder{
+            font-size: 15px;
+        }
+        .menu2 .menu2-btn{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .menu2 .menu2-btn a{
         text-decoration: none;
         color: black;
         background-color: lightgrey;
         border-radius: 5px;
         padding: 10px 25px;
+        margin: 5px 0px;
         }
         .menu2 a:hover{
             background: orange;
@@ -159,7 +217,7 @@
        }
        .container .banner{
         width: 100%;
-        height: 60vh;
+        /* height: 60vh; */
         display: flex;
         justify-content: space-between;
         display: none;
@@ -198,7 +256,7 @@
        }
        .content{
         width: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         display: flex;
         justify-content: space-evenly;
         margin-top: 20px;
@@ -232,9 +290,11 @@
        }
        .content .project .project-details{
           width: 100%;
-          height: 100%;
+          /* height: 100%; */
           background: linear-gradient(to right, orange, rgb(228, 18, 18));
           padding: 20px;
+          height: 450px;
+          overflow: auto;
        }
        .content .project .project-details .web-template{
         width: 80%;
@@ -284,7 +344,7 @@
        }
        footer{
         width: 100%;
-        height: 40vh;
+        /* height: 40vh; */
         background-color: rgba(25, 25, 25, 0.83);
        }
        .footer{
@@ -295,6 +355,7 @@
         justify-content: space-evenly;
         align-items: center;
         margin-top: 50px;
+        padding: 20px;
        }
        .footer .link{
         width: 50%;
@@ -344,12 +405,23 @@
         .header .menu1{
             display: none;
         }
+        .header .show-menu{
+            position: absolute;
+            top: 20%;
+            display: flex;
+            flex-direction: column;
+        }
+        
         /* .container{
             display: none;
         } */
+        .menu2{
+            /* display: none; */
+            padding: 20px 0px;
+        }
         .container{
             width: 100%;
-            margin-bottom: 20%;
+            margin-bottom: 5%;
         }
         .container .web-layout{
             /* width: 100%; */
@@ -357,6 +429,7 @@
             flex-direction: column;
             display: none;
             /* transform: scale(0); */
+        transition: all 2s linear;
         }
         .container .web-layout .services{
             width: 100%;
@@ -375,6 +448,8 @@
             flex-wrap: wrap;
             display: none;
             /* transform: scale(0); */
+        transition: all 2s linear;
+
         }
         .container .logo div{
             width: 25%;
@@ -388,8 +463,9 @@
             width: 100%;
             /* height: 60vh; */
             display: flex;
-            /* flex-direction: column; */
+            flex-direction: column;
             justify-content: space-evenly;
+        transition: all 2s linear;
             display: none;
         }
         .container .banner div{
@@ -399,7 +475,7 @@
             width: 100%;
             height: 100%;
         }
-        .container .banner .flayer{
+        .container .flayer{
             width: 100%;
         }
         .content{
@@ -470,7 +546,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            margin-top: 30%;
+            margin-top: 5%;
             padding-top: 30px;
         }
        }
@@ -486,32 +562,45 @@
             <a href="Project_CompanySiteTemplate.html"> Home </a>
             <a href="AboutUS.html"> About Us </a>
             <a href="ContactUs.html"> Contact Us </a>
-            <div class="bar"> <i class="fa-solid fa-bars"></i></div>
         </div>
+        <div class="bar"> <i class="fa-solid fa-bars" id="bar"></i></div>
         <div class="search">
             <i class="fa-solid fa-magnifying-glass search-icon" id="search" onclick="search()"></i>
-            <div class="srh">
-                <input type="search" placeholder="search something">
-            </div>
         </div>  
+        <!-- <div class="show-menu">
+            <a href="Project_CompanySiteTemplate.html"> Home </a>
+            <a href="AboutUS.html"> About Us </a>
+            <a href="ContactUs.html"> Contact Us </a>
+            <i class="fa-solid fa-xmark" id="xmark"></i>
+        </div> -->
     </div>
-
 </header>
-
+     <!-- menu2 start  -->
         <div class="menu2">
-           
+            <i class="fa-solid fa-xmark" id="close-menu2"></i>
+
+             <form action="">
+                <input type="search" placeholder="search something" id="filterMenu" onkeyup="searchmenu()">
+             </form>  
+              <div class="menu2-btn">
                <a href="#" id="weblayout"> Web Layouts </a> 
                <a href="#" id="logo"> Logo </a> 
                <a href="#" id="banner"> Banner </a> 
-               <a href="#" id="flayer"> Flayer </a>      
+               <a href="#" id="flayer"> Flayer </a>  
+            </div>    
         </div>
+       <!-- menu2 end  -->
+
 
         <div class="container">
+
+            <!-- web-layput div -->
             <div class="view web-layout">
                 <div class="services">
                     <div class="box">
                     <h3> More Services </h3>
-                    <p> Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your software development needs. building cloud, infrastructure, network, etc. We put a strong focus on the needs of your business to figure out solutions that best fits your demand and nail it</p>
+                    <p> Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your software development needs. building cloud, infrastructure, network, etc. We put a strong focus on the needs of your business to figure out solutions that best fits your demand and nail it 
+                    </p>
                 </div>
                 </div>
                 <div class="title">
@@ -519,7 +608,9 @@
                     <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus quo iusto deleniti facilis. Incidunt, cum minima dolores maiores ad sint provident quis, voluptates, saepe voluptatem alias? Numquam reiciendis temporibus asperiores tempore similique quia nisi laudantium at praesentium, sapiente veniam vel inventore error nihil unde delectus?</p>
                 </div>
             </div>
+        <!-- web layout end -->
 
+            <!-- logo div -->
             <div class="view logo">
             <div>
                 <img src="https://demos.shopifyteam.com/netlink/wp-content/uploads/sites/484/2023/07/Group_25461.webp" alt="">
@@ -543,7 +634,10 @@
                 <img src="https://html.hixstudio.net/interno-prev/assets/img/logo/logo.png" alt="">
             </div>  
             </div>
+           <!-- logo end -->
 
+
+            <!-- banner div -->
             <div class="view banner">
                 <div>
                   <img src="https://thepixelcurve.com/html/techwix/techwix/assets/images/hero2-bg.jpg" alt="">
@@ -552,6 +646,9 @@
                     <img src="https://png.pngtree.com/template/20220427/ourmid/pngtree-tiny-business-people-work-at-detachable-computer-banner-image_1288570.jpg" alt="">
                 </div>
             </div>
+            <!-- banner end -->
+
+            <!-- flayer div -->
             <div class="view flayer">
             <div>
                 <p>
@@ -562,8 +659,9 @@
                 <img src="https://s.tmimgcdn.com/scr/800x500/320900/creative-technology-conference-webinar-flyer-template-and-business-event-banner-invitation-layout_320913-original.jpg" alt="">
             </div>
             </div>
+            <!-- flayer end -->
         </div>
-   
+        
         <main>
             <div class="content">
                 <div class="welcm-note">
@@ -604,6 +702,7 @@
             
         </main>
    
+        <!-- footer start -->
 <footer>
     <div class="footer">
         <div class="link">
@@ -625,6 +724,9 @@
     </div>
     <p> Copyright 2010, All right reserved. <br> Design a modern web 2.0 styled web layout.</p>
 </footer>
+<!-- footer end -->
+
+<script src="jquery-3.7.1.min.js"></script>
 <script>
    
      document.querySelectorAll(".menu2 a")[0].addEventListener('click',function(){
@@ -664,13 +766,53 @@
 
      })
 
-     function search(){
-        var search = document.getElementById("search");
-       var srh =  document.querySelector(".srh");
-       srh.style.display = "block";
-       search.style.display = "none";
-     }
+    
+        // var search = document.getElementById("search");
+    //   / var srh =  document.querySelector(".srh");
+    //    srh.style.display = "block";
+    //    search.style.display = "none";
+       document.querySelector("#search").addEventListener("click",function(){
+          document.querySelector(".menu2").style.display = "block";
+       })
+    
 
+       document.querySelector("#close-menu2").addEventListener("click",function(){
+          document.querySelector(".menu2").style.display = "none";
+       })
+
+       function searchmenu(){
+        var filterMenu = document.getElementById("filterMenu").value.toUpperCase();
+        var menuItem = document.querySelector(".menu2-btn");
+        var menu = querySelectorAll("a");
+
+        for(var i=0; i<=menu.length;i++){
+            var a = menuitem.querySelectorAll(a)[i];
+            var val = a.innerHTML || a.innerText || a.textContent;
+
+            if(val.toUpperCase().indexOf(filterMenu) >-1){
+                menu[i].style.display = "";
+            }else{
+                menu[i].style.display = "none";
+
+            }
+        }
+       }
+
+    //  $(document).ready(function(){
+    // $("#bar").click(function(){
+    //     // $(".show-menu").css({"display":"flex","right":"0%"})
+    //     $(".menu1").css("diaplay","block")
+
+    // })
+
+    // $("#xmark").click(function(){
+    //     $(".show-menu").css({"display": "none","right": "-100%"})
+    // })
+    //  })
+
+document.querySelector("#bar").addEventListener("click",function(){
+    document.querySelector(".header.manu1").style.display = "block";
+})
 </script>
 </body>
 </html>
